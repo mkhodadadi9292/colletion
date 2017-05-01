@@ -1,0 +1,10 @@
+1)https://www.hopperhq.com/?utm_source=quora&utm_medium=cpc&utm_campaign=instagramproductdesktoprow
+
+
+
+=========================================================================
+[1]With more than 25 photos and 90 likes every second, we store a lot of data here at Instagram. To make sure all of our important data fits into memory and is available quickly for our users, we’ve begun to shard our data — in other words, place the data in many smaller buckets, each holding a part of the data.==>(sharding data and storing in manay small buckets)
+
+[2]Our application servers run Django with PostgreSQL as our back-end database. Our first question after deciding to shard out our data was whether PostgreSQL should remain our primary data-store, or whether we should switch to something else. We evaluated a few different NoSQL solutions, but ultimately decided that the solution that best suited our needs would be to shard our data across a set of PostgreSQL servers.==>(finally they decided to use a set of PostgreSQL)
+
+
