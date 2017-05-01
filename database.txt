@@ -1,0 +1,12 @@
+ at Facebook, their data platforms include MySQL, Oracle, Vertica, Hive, hBase, and several proprietary ones.
+Facebook uses a graph database, called Open Graph to organize social networks with a database technology that is much faster and more suitable to the task than the old SQL technology
+(https://www.facebook.com/notes/facebook-engineering/tao-the-power-of-the-graph/10151525983993920)
+
+=====================================================================================
+Google invented many of their own databases, and also use several open source and proprietary systems.
+Many projects at Google store data in Bigtable, including web indexing, Google Earth, and Google Finance. These applications place very different demands on Bigtable, both in terms of data size (from URLs to web pages to satellite imagery) and latency requirements (from backend bulk processing to real-time data serving).
+
+
+=========================================================================================
+1)Nodes represent entities such as people, businesses, accounts, or any other item to be tracked. They are roughly the equivalent of the record, relation, or row in a relational database, or the document in a document database.()
+===========================================================================
