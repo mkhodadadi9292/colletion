@@ -7,4 +7,28 @@
 
 [2]Our application servers run Django with PostgreSQL as our back-end database. Our first question after deciding to shard out our data was whether PostgreSQL should remain our primary data-store, or whether we should switch to something else. We evaluated a few different NoSQL solutions, but ultimately decided that the solution that best suited our needs would be to shard our data across a set of PostgreSQL servers.==>(finally they decided to use a set of PostgreSQL)
 
+[3]Before writing data into this set of servers, however, we had to solve the issue of how to assign unique identifiers to each piece of data in the database (for example, each photo posted in our system). The typical solution that works for a single database — just using a database’s natural auto-incrementing primary key feature — no longer works when data is being inserted into many databases at the same time. The rest of this blog post addresses how we tackled this issue.
+==>(Problem!!!=> how to assign unique identifiers to each piece of data in database?)
+
+[4]The list feature 
+
+
+1)   Generated IDs should be sortable by time (so a list of photo IDs, for example, could be sorted without fetching more information about the photos)
+    
+2) IDs should ideally be 64 bits (for smaller indexes, and better storage in systems like Redis)
+
+3)   The system should introduce as few new ‘moving parts’ as possible — a large part of how we’ve been able to scale Instagram with very few engineers is by choosing simple, easy-to-understand solutions that we trust.
+
+
+
+[5]Solution
+
+
+    Generated IDs should be sortable by time (so a list of photo IDs, for example, could be sorted without fetching more information about the photos)
+    IDs should ideally be 64 bits (for smaller indexes, and better storage in systems like Redis)
+    The system should introduce as few new ‘moving parts’ as possible — a large part of how we’ve been able to scale Instagram with very few engineers is by choosing simple, easy-to-understand solutions that we trust.==>(Generate IDs in web application==> uuid, MongoDB’s ObjectId),(Generate IDs through dedicated service==>for example **Twitter’s Snowflake),(DB Ticket Servers)
+
+
+
+
 
